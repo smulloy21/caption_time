@@ -5,6 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :images
   has_many :captions
-  validates :username, uniqueness: true
   validates :password, length: { in: 6..20 }
 end
