@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :users do
-    resources :images
-    resources :captions
-  end
+
+  devise_for :users
+  root :to => 'images#index'
 
   resources :images do
     resources :captions

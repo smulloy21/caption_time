@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
 
 group :development do
   gem 'byebug'
