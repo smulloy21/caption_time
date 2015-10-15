@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.all
+    @images = Image.all.ranking
     @image = Image.new
     @user = current_user
   end
