@@ -1,5 +1,5 @@
 
-<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+<div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-12 col-lg-offset-0">
   <img src="<%= @current_image.img %>" alt="" />
   <% if @user %>
   <hr>
@@ -13,33 +13,6 @@
   <ul class="caption-ul">
     <%= captions_tree_for(@current_image.captions) %>
   </ul>
-  <!-- <ul class="caption-ul">
-    <% @current_image.captions.each do |caption| %>
-
-      <li> <%= caption.text %>
-        <br>
-      <div class="caption-content">
-        posted by <%= User.find(caption.user_id).email %> <%= time_ago_in_words(caption.created_at) %> ago
-        <a href="#" class='caption-reply-button'>reply</a>
-        <div class='caption-reply-form'>
-          <%= form_for [caption, @caption] do |f| %>
-            <%= f.text_field(:text, {:class => 'form-control'}) %>
-            <%= f.submit(:class => 'btn', :value => 'Reply') %>
-          <% end %>
-        </div>
-      </div>
-       <ul class="caption-ul">
-         <% caption.captions.each do |reply| %>
-          <li> <%= reply.text %> </li>
-         <% end %>
-       </ul>
-
-      </li>
-      <hr>
-    <% end %>
-
-  </ul> -->
-  <!--  captions here -->
 </div>
 
 <script charset="utf-8">
@@ -52,11 +25,4 @@
     });
   });
 
-  // function printCaptions(obj) {
-  //   var string = "";
-  //   obj.captions.forEach(function (caption) {
-  //     string += caption.text;
-  //   })
-  //   return string;
-  // }
 </script>

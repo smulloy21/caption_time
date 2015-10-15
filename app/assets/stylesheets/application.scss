@@ -56,15 +56,17 @@
 .caption-ul {
   list-style-type: none;
 }
-.caption-ul li {
-  text-indent: -5px;
-}
-.caption-ul li:before {
-  content:'-';
-  position: relative;
-  left: -5px;
-}
 
 .caption-reply-form, .edit-caption-form {
   display: none;
+}
+
+.voting-info {
+  display: inline-block;
+}
+
+.caption-text {
+  height: 60px;
+  line-height: 30px;
+  display: inline;
 }

@@ -1,8 +1,14 @@
 <li>
-  <%= caption.text %>
+  - &nbsp;&nbsp;
+    <%= caption.text %> &nbsp;
   <br>
   <div class="caption-content">
-    <%= User.find(caption.user_id).email %> | <small><%= time_ago_in_words(caption.created_at) %> ago</small>
+    <div class='voting-info'>
+
+      <%= link_to '<span class="glyphicon text-right glyphicon-plus"></span>'.html_safe, caption_path(caption), :data => {:method => 'patch', :upvote => true} %>
+      <%= caption.upvotes %>
+    </div>
+    | <%= User.find(caption.user_id).email %> | <small><%= time_ago_in_words(caption.created_at) %> ago</small>
     <% if @user %>
     | <a href="#" class='caption-reply-button'>reply</a>
     <div class='caption-reply-form'>
@@ -26,4 +32,3 @@
 
   </div>
 </li>
-<!-- <hr> -->

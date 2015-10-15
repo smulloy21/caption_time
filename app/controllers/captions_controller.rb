@@ -19,7 +19,12 @@ class CaptionsController < ApplicationController
 
   def update
     @caption = Caption.find(params[:id])
-    @caption.update(caption_params)
+    if params['caption']
+      @caption.update(caption_params)
+    else
+      @caption.upvotes += 1
+      @caption.save
+    end
     session[:return_to] ||= request.referer
     redirect_to session.delete(:return_to)
   end
