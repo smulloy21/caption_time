@@ -1,7 +1,9 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Sign up to be able to post images, caption images, and reply to other captions
+* You can only edit + delete own captions
+* You can't edit or delete images, so don't post dumb stuff.
+
 
 Things you may want to cover:
 
