@@ -1,0 +1,38 @@
+* Is the Github documentation - commits and README - thorough and descriptive?
+
+The commits are clear and concise, as is the README. There is no information about the authors in the README file, though; however, I'm not sure that is a requirement for this project.
+
+* Is there good spec coverage?
+
+There is little to no spec coverage.
+
+* Do all specs pass?
+
+Rspec returns an uninitialized constant error in users_controller when run. UsersController points to controller that doesn't exist. Removing the block completely solves the error and allows RSpec to run successfully.
+
+* Is the application logic clear and easy to navigate?
+
+Just like the commits and README, the logic in this application is clear, concise and easy to read and understand.
+
+* Can you make a test payment through Stripe?
+
+
+* Is the site user-friendly?
+
+Absolutely! Users are able to create accounts, upload images and upvote and comment on them. It is well designed and easy to navigate around on. The image thumbnails are a nice touch!
+
+* Are there opportunities for refactoring?
+
+Did not see any "REFACTOR THIS, PLEASE!!!" opportunities.
+
+* What features stand out?
+
+The upvote feature definitely stands out to me, as does the ability for users to create their own accounts. These are two features that I have been highly interested in implementing into my own projects.
+
+* What features could be improved?
+
+A delete feature would be awesome. As of now, users are unable to delete their pictures. Also, preventing users from repeatedly liking their own comments/pictures could be cool, too. Maybe downvotes (or reducing rating), too? [Edit: We saw that the schema contains a downvote column in the images table. It clearly looks like a 'planned feature']
+
+* Do you have any additional constructive criticism or positive feedback to share?
+
+Check out the seed feature. It could be handy to seed the page with a couple of example pictures and captions.
