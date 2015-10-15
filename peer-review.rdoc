@@ -36,3 +36,5 @@ A delete feature would be awesome. As of now, users are unable to delete their p
 * Do you have any additional constructive criticism or positive feedback to share?
 
 Check out the seed feature. It could be handy to seed the page with a couple of example pictures and captions.
+
+BYE FELICIA!
