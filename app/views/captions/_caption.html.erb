@@ -5,8 +5,11 @@
   <div class="caption-content">
     <div class='voting-info'>
 
-      <%= link_to '<span class="glyphicon text-right glyphicon-plus"></span>'.html_safe, caption_path(caption), :data => {:method => 'patch', :upvote => true} %>
+      <%= link_to '<span class="glyphicon text-right glyphicon-plus"></span>'.html_safe, caption_path(caption, :upvote => true), :data => {:method => 'patch'} %>
       <%= caption.upvotes %>
+
+      | <%= link_to '<span class="glyphicon text-right glyphicon-minus"></span>'.html_safe, caption_path(caption), :data => {:method => 'patch'} %>
+      <%= caption.downvotes %>
     </div>
     | <%= User.find(caption.user_id).email %> | <small><%= time_ago_in_words(caption.created_at) %> ago</small>
     <% if @user %>
