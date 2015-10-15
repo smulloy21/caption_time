@@ -17,6 +17,7 @@ class ImagesController < ApplicationController
     @current_image = Image.find(params[:id])
     @image = Image.new
     @user = current_user
+    @caption = Caption.new
   end
 
   def update

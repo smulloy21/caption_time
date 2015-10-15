@@ -11,11 +11,10 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">CaptionTime</a>
+      <%= link_to 'Caption Time', images_path, :class => 'navbar-brand' %>
     </div>
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if @user && @image %>
@@ -39,8 +38,11 @@
   </div>
 </nav>
 
+
+<% if @image %>
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
+
 
     <!-- Modal content-->
     <div class="modal-content">
@@ -67,6 +69,7 @@
 
   </div>
 </div>
+<% end %>
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
