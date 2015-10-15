@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :images
-  has_many :captions
+  has_many :images, :dependent => :destroy
+  has_many :captions, :dependent => :destroy
   validates :password, length: { in: 6..20 }
 end

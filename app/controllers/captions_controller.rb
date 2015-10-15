@@ -17,6 +17,20 @@ class CaptionsController < ApplicationController
     end
   end
 
+  def update
+    @caption = Caption.find(params[:id])
+    @caption.update(caption_params)
+    session[:return_to] ||= request.referer
+    redirect_to session.delete(:return_to)
+  end
+
+  def destroy
+    @caption = Caption.find(params[:id])
+    @caption.destroy
+    session[:return_to] ||= request.referer
+    redirect_to session.delete(:return_to)
+  end
+
   private
   def caption_params
     params.require(:caption).permit(:text)

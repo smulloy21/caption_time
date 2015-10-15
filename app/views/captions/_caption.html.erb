@@ -1,0 +1,29 @@
+<li>
+  <%= caption.text %>
+  <br>
+  <div class="caption-content">
+    <%= User.find(caption.user_id).email %> | <small><%= time_ago_in_words(caption.created_at) %> ago</small>
+    <% if @user %>
+    | <a href="#" class='caption-reply-button'>reply</a>
+    <div class='caption-reply-form'>
+      <%= form_for [caption, @caption] do |f| %>
+        <%= f.text_field(:text, {:class => 'form-control'}) %>
+        <%= f.submit(:class => 'btn', :value => 'Reply') %>
+      <% end %>
+    </div>
+      <% if @user === User.find(caption.user_id) %>
+      | <a href="#" class='caption-reply-button'>edit</a>
+      <div class='edit-caption-form'>
+        <%= form_for caption do |f| %>
+          <%= f.text_field(:text, {:value => caption.text, :class => 'form-control'}) %>
+          <%= f.submit(:class => 'btn', :value => 'Save') %>
+        <% end %>
+      </div>
+      | <%= link_to 'x', caption_path(caption), :data => {:method => 'delete' }%>
+
+      <% end %>
+    <% end %>
+
+  </div>
+</li>
+<!-- <hr> -->

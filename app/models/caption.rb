@@ -3,6 +3,6 @@ class Caption < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :captionable, polymorphic: true
-  has_many :captions, as: :captionable
+  has_many :captions, as: :captionable, :dependent => :destroy
 
 end

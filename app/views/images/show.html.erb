@@ -11,6 +11,9 @@
   <hr>
   <% end %>
   <ul class="caption-ul">
+    <%= captions_tree_for(@current_image.captions) %>
+  </ul>
+  <!-- <ul class="caption-ul">
     <% @current_image.captions.each do |caption| %>
 
       <li> <%= caption.text %>
@@ -35,6 +38,25 @@
       <hr>
     <% end %>
 
-  </ul>
+  </ul> -->
   <!--  captions here -->
 </div>
+
+<script charset="utf-8">
+  $(document).ready(function() {
+    $('.caption-reply-button').each(function() {
+      $(this).click(function(event) {
+        event.preventDefault();
+        $(this).next().toggle();
+      });
+    });
+  });
+
+  // function printCaptions(obj) {
+  //   var string = "";
+  //   obj.captions.forEach(function (caption) {
+  //     string += caption.text;
+  //   })
+  //   return string;
+  // }
+</script>
